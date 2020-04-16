@@ -10,7 +10,6 @@
               ["bat"]
             ]
     Note:
-
     All inputs will be in lowercase.
     The order of your output does not matter.
 */
