@@ -1,4 +1,4 @@
-/*
+ /*
     Given an integer array nums, find the contiguous subarray 
     (containing at least one number) which has the largest sum 
     and return its sum.
@@ -25,7 +25,7 @@ class Solution {
       int min = 9999 ;
       boolean flag = false ;
   
-      for( int i = 0 ; i< nums.length ; i++ )
+      for( int i = 0 ; i < nums.length ; i++ )
       {
          if( nums[i] > 0 )
          {
@@ -35,6 +35,9 @@ class Solution {
            for( int j = i+1 ; j < nums.length ; j++ )
            {
              sum += nums[j] ;
+             if( sum < 0 ){
+                break ;
+             }
              max = (sum > max) ? sum : max ;
            }
          }
@@ -42,10 +45,10 @@ class Solution {
 
     if(flag == false)
     {
-      max = nums[0] ;
-      for( int i = 1 ;i <nums.length ; i++)
+       max = nums[0] ;
+      for( int i = 1 ; i <nums.length ; i++)
       {
-        max = ( max < nums[i]) ? nums[i] : max ;
+         max = ( max < nums[i]) ? nums[i] : max ;
       }
     }
     return   max ;
