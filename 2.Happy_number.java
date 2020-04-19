@@ -8,13 +8,18 @@
     in a cycle which does not include 1. 
     Those numbers for which this process ends in 1 are happy numbers.
 
-  Input: 19
-  Output: true
-  Explanation: 
-  12 + 92 = 82
-  82 + 22 = 68
-  62 + 82 = 100
-  12 + 02 + 02 = 1
+    Input: 19
+    Output: true
+    Explanation: [here 2 = square of number eg. 92 = 9^2]
+    12 + 92 = 82
+    82 + 22 = 68
+    62 + 82 = 100
+    12 + 02 + 02 = 1
+
+    Hint : When ever it says otherwise it will loop endlessly .
+           Means their must be some pattern .
+           i.e after a certain iteration the number would 
+           be repeated again .
 
 */
 
@@ -32,7 +37,7 @@ class Happy_number {
           sum  += digit*digit ;
           num = num/10 ;
         }
-      if(num_count.contains(sum))
+      if( num_count.contains(sum) )
          return false ;
       else num_count.add(sum) ;
       
