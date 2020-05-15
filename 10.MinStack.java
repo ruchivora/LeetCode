@@ -7,7 +7,7 @@ class MinStack {
 
     public void push(int x) {
     
-      if(get_min.isEmpty() || x <get_min.peek())
+      if(get_min.isEmpty() || x < get_min.peek() )
       {
           get_min.push(x) ;
       }  

@@ -29,17 +29,15 @@ class Solution {
       {
          if( nums[i] > 0 )
          {
-            flag = true ;
-            sum = nums[i] ;
-            max = (sum > max) ? sum : max ;
-           for( int j = i+1 ; j < nums.length ; j++ )
-           {
-             sum += nums[j] ;
-             if( sum < 0 ){
-                break ;
+              flag = true ;
+              sum = nums[i] ;
+              max = (sum > max) ? sum : max ;
+             for( int j = i+1 ; j < nums.length ; j++ )
+             {
+                 sum += nums[j] ;
+                 if( sum < 0 )  break ;
+                 max = (sum > max) ? sum : max ;
              }
-             max = (sum > max) ? sum : max ;
-           }
          }
       }
 
@@ -47,9 +45,7 @@ class Solution {
     {
        max = nums[0] ;
       for( int i = 1 ; i <nums.length ; i++)
-      {
          max = ( max < nums[i]) ? nums[i] : max ;
-      }
     }
     return   max ;
     }

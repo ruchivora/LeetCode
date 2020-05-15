@@ -31,13 +31,9 @@ class Solution {
         }
         map.get(temp).add(strs[i]) ;
       }
-    Anagram.addAll(map.values()) ;
-
-
+      Anagram.addAll(map.values()) ;
 
     return Anagram ;
-
-
-
+    
     }
 }

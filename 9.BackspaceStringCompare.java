@@ -8,70 +8,40 @@
 	Output: true
 	Explanation: Both S and T become "ac".
 
-	Example 2:
-	Input: S = "ab##", T = "c#d#"
-	Output: true
-	Explanation: Both S and T become "".
-
-	Example 3:
-	Input: S = "a##c", T = "#a#c"
-	Output: true
-	Explanation: Both S and T become "c".
+	Hint  :  Here observe that we opr=erate in only one direction .
+			 Hence stack can be used .
+	https://www.youtube.com/watch?v=96-d8ZPjHeE
 */
-
-
+ 
 
 class Solution {
     public boolean backspaceCompare(String S, String T) {
-        int S_pointer = S.length()-1 ;
-        int T_pointer = T.length()-1 ;
+        
+    	Stack<Character> Sstack = new Stack<Character>() ;
+    	Stack<Character> Tstack = new Stack<Character>() ;
 
-        int S_skip = 0 ;
-        int T_skip = 0 ;
+    	for( char i : S.toCharArray() )
+    	{
+    		if( i != '#' )
+    			Tstack.push(i) ;
+    		else if( !Tstack.isEmpty() )
+    			  		Tstack.pop() ;
+    	}
 
-        while( S_pointer >= 0 || T_pointer >= 0) 
-              {
-                  while( S_pointer >= 0 )
-                  {
-	                    if( S.charAt(S_pointer) == '#' )
-	                    {
-	                      S_skip    +=1 ;
-	                      S_pointer -=1 ;
-	                    }else if(S_skip > 0 )
-	                            {
-	                              S_skip    -= 1 ;
-	                              S_pointer -= 1 ;
-	                             }
-	                            else{
-	                              break ;
-	                            }     
-                  }
-                
-                while( T_pointer >= 0 )
-                {
-	                  if( T.charAt(T_pointer) == '#' )
-	                  {
-	                    T_skip    +=  1 ;
-	                    T_pointer -=  1 ;
-	                  }else if( T_skip > 0)
-	                          {
-	                            T_skip    -= 1 ;
-	                            T_pointer -= 1 ;
-	                          }
-	                          else{
-	                            break ;
-	                          }         
-                }
+    	for( char i : T.toCharArray() )
+    	{
+    		if( i != '#' )
+    			Sstack.push(i) ;
+    		else if( !Sstack.isEmpty() )
+    			  		Sstack.pop() ;
+    	}
 
-                if( T_pointer >= 0 && S_pointer >=0 &&  T.charAt(T_pointer) != S.charAt(S_pointer)  )
-                  return false ;
-    
-                if( (S_pointer >= 0) != (T_pointer >= 0)   )
-                    return false ;
-
-                S_pointer -= 1 ;
-                T_pointer -= 1 ;
-              }                
-     	return true ;             
+    	while( !Sstack.isEmpty() )
+    	{
+    		char c = Sstack.pop() ;
+    		if( Tstack.isEmpty() ||  c != Tstack.pop() )
+    			return false ;	    	
+    	}
+    	return Sstack.isEmpty() && Tstack.isEmpty() ;
     }
 }
