@@ -1,0 +1,11 @@
+# Instructions for Binary Search
+
+1. In binary search , even if target value is not present
+   while binary search . At the end , mid value will fall 
+   somewhere where the target value can be inserted .
+
+
+2. While applying binary search never think to divide the 
+   value by 2 before sending to Binary Search . Because
+   binary search is ultimately going to partition that .
+     
