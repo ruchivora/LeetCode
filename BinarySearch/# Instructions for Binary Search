@@ -8,4 +8,9 @@
 2. While applying binary search never think to divide the 
    value by 2 before sending to Binary Search . Because
    binary search is ultimately going to partition that .
-     
+
+3. If we need to find A+B+C+D = 0 but
+   doing so will take O(N^4) because of 4 for loops .
+   So , if we do A + B = - (C + D) then time complexity 
+   will be O(N^2) + O(N^2) = O(N^2) . Which is better .
+

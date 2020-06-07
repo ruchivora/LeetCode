@@ -1,3 +1,7 @@
+/*
+	Here if we do mid*mid == target then that would lead to
+	overflow . So 
+*/
 public class Solution {
     public int sqrt(int A) {
         
@@ -15,7 +19,6 @@ public class Solution {
                    right =mid - 1 ; 
                    else return mid ;
         }
-        
         return left - 1 ;
     }
 }
