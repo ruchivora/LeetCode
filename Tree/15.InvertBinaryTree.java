@@ -18,9 +18,6 @@ class Solution {
     {
         if( root == null ) return null ;
 
-        if( root.left == null && root.right == null )
-            return root ;
-
         invertTree( root.left  ) ;
         invertTree( root.right ) ;
 

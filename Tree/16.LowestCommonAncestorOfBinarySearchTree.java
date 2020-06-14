@@ -23,10 +23,23 @@
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) 
     {
-    	if( root.val > p && root.val > q )
+
+      /*
+          if( root == null )
+              return root ;
+          This condition is not required because it will never hit . 
+          Why ? If i have a range and i arrive at a node whose left 
+          subtree is null , and when you compare the range you will
+          find that if the range is greater then current node 
+          you will traverse right , if range is smaller than range 
+          traverse left , but range won't be lesser .
+          Think......... 
+      */
+
+    	if( root.val > p.val && root.val > q.val )
     		return lowestCommonAncestor( root.left , p , q ) ;
 
-    	if( root.val < p && root.val < q )
+    	if( root.val < p.val && root.val < q.val )
     		return lowestCommonAncestor( root.right , p , q ) ;
 
     	else return root ;
