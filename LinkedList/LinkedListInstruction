@@ -1,9 +1,15 @@
 1. Always use minimal pointers for computation.
-2. Whenever their is manipulation related to two 
-   List , it is always better to use dummyNode .
-3. Becareful , if you initialize temporary node
-   in the middle of while loop . Because it may lead 
-   to NullPointerException .
-4. While writing program for Linked List always 
-   keep a loop that prints the linked list . 
-   So , it becomes easy to debug the output .  
+
+2. Whenever their is manipulation related to two List , it is always better to use dummyNode .
+
+3. Becareful , if you initialize temporary node in the middle of while loop . 
+   Because it may lead to NullPointerException .
+
+4. While writing program for Linked List always keep a loop that prints the 
+   linked list . 
+   So , it becomes easy to debug the output .Or, while writing the code return 
+   head again and again so that you come to know how the list is manipulated .
+
+5. While writing code be careful about "Null Pointer Exception" . Specially when 
+   you hit end of the list .
+
