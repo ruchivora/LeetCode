@@ -1,3 +1,8 @@
 When to use stack datastructure ?
 
-1. In array if you want to access an element 
+1. Stack is frequently used to balance brackets , 
+   to perform operation on string (like : remove
+   duplicates ) , next greater element .
+
+2. Whenever something is related to braces , first
+   thought should be stack .
