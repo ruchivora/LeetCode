@@ -6,3 +6,13 @@ When to use stack datastructure ?
 
 2. Whenever something is related to braces , first
    thought should be stack .
+
+3. If you solve a problem by brute force and 
+   Time Complexity is O(N2) , and their is 
+   dependancy between the two loops . Then
+   the time complexity can surely be reduced by 
+   Stack. 
+   eg: for( int i = 0 ; i < n ; i++ )
+   			for( int j = i ; j < n ; j++ )
+   	   Here their is dependency between the 
+   	   two Loops , this can be optimized by Stack .
