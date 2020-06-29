@@ -16,3 +16,18 @@ When to use stack datastructure ?
    			for( int j = i ; j < n ; j++ )
    	   Here their is dependency between the 
    	   two Loops , this can be optimized by Stack .
+
+4. The four main problems that can be solved by stack .
+    1. Nearest smallest element to the left . 
+    2. Nearest smallest element to the right .
+    3. Nearest greatest element to the left .
+    4. Nearest greatest element to the right .
+
+    In case of Nearest smallest element to the left and right
+    be careful about stack.isEmpty() in while Loop . 
+    Because if stack is empty then bydefault either 
+    extreme left or extreme right element has to be inserted .
+
+    In case of Nearest greatest element to the left and right 
+    if stack is empty then by default it is given as -1 .
+
