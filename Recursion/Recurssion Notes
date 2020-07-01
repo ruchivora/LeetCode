@@ -1,0 +1,9 @@
+1. In case of recursion always first start with the
+   recurssion tree .
+
+2. Once recursion tree is done then think about
+   how to code . Generally once recurssion tree 
+   is designed , then writing code becomes very easy .
+
+3. In recursion always send the size of array and array 
+   as a parameter of the function .
