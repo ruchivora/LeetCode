@@ -1,3 +1,6 @@
+Recursion Practice problem List : https://www.techiedelight.com/recursion-practice-problems-with-solutions/
+
+
 1. In case of recursion always first start with the
    recurssion tree .
 
@@ -7,3 +10,6 @@
 
 3. In recursion always send the size of array and array 
    as a parameter of the function .
+
+4. While doing recursion in Linked List , always the 
+   start/head pointer points to the current node .
