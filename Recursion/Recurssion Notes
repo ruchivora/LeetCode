@@ -13,3 +13,6 @@ Recursion Practice problem List : https://www.techiedelight.com/recursion-practi
 
 4. While doing recursion in Linked List , always the 
    start/head pointer points to the current node .
+
+5. While designing recursion Tree , as you go done the 
+   tree , think about how the recursion stack will Look Like .
