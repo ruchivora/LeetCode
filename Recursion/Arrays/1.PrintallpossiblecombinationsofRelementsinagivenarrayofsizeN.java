@@ -6,10 +6,10 @@
 							 In this function , if the size of data array ==  r ,
 							 then print the data array . 
 							 Also if( index >= n ) then simply return .
-							 The recursive call : you either inclue the current element in the data array Or
+							 The recursive call : you either inclue the current element in the data array 
 							 											printCombination( input , n , data , index+1 , dataIndex+1 , r ) ;
 																		Here we include the current element in the data array .
-
+																			Or
 							 											you do not include current element in the data array .
 							 											printCombination( input , n , data , index+1 , dataIndex , r ) ;
 							 											Here dataIndex is not incremented . So the current data element is replaced .
