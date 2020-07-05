@@ -14,7 +14,7 @@ class Combination
 			int r = 3 ; /* r = No. of elements . eq: r = 3  . So , 2,3,4 */
 			int n = input.length ; 
 			int data[] = new int[r] ;
-      Arrays.sort( input ) ;
+      		Arrays.sort( input ) ;
 			printCombination( input , n ,data , 0 , 0 , r ) ;
 		}
 

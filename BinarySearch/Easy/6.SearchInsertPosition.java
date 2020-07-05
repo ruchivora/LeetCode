@@ -24,10 +24,6 @@ class Solution {
     		
     			  else left = mid + 1 ;		
     	}
-
-    	if( nums[mid] < target )
-    		return mid + 1 ; 
-
-    return mid ;
+    return left ;
     }
 }
