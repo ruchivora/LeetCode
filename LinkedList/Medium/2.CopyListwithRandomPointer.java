@@ -16,83 +16,34 @@ class Node {
 
  /*
     Solution 1 : Using HashMap 
+                 what if the linkedlist 
  */
 
-
 class Solution {
     public Node copyRandomList(Node head) 
     {
+        if(head==null) return null;
 
-    }
-}
-
-
-
-
-
-
-/*
-    Most efficient algorithm but not accepted by LeetCode
-    Because of "Next pointer of node with label 7 from the 
-    original list was modified." i.e They don't want 
-    to modify original linkedlist .
-
-    Reference : https://www.youtube.com/watch?v=xbpUHSKoALg&t=281s
-*/
-
-class Solution {
-    public Node copyRandomList(Node head) 
-    {
-        Node curr = head ;
-        Node prev = null ;
-        Node next = null ;
+        Node curr = new Node(head.val) ; 
+        Node temp = head ; 
+        Node sol  = curr;
+        HashMap<Node,Node>map = new HashMap();
         
-        /*
-            Inserts duplicate node in the list .
-        */
-        while( curr != null )
+        while(head != null)
         {
-          next = curr.next ;
-          Node temp = new Node( curr.val );
-          temp.next = curr.next ;
-          curr.next = temp ;
-          curr = next ;
+            curr.next = new Node(head.val);
+            if(curr.next!=null) 
+                map.put(head,curr.next);
+            curr = curr.next;
+            head = head.next;
         }
-
-        /*
-            Assigning random pointer to the duplicate nodes
-            inserted before .
-        */
-        curr = head ;
-        int count = 1 ;
-
-        while( curr != null )
+        while(temp != null)
         {
-            if( count % 2 == 0 )
-            {
-              /* condition encountered when 7's random pointer points to null*/
-              if( prev.random == null ) 
-                  curr.random  = null ;
-              else curr.random = prev.random.next ;
-            }
-            prev = curr ;
-            curr = curr.next ; 
-            count++ ;
+            Node temp2 = map.get(temp);
+            if(temp.random != null)
+                temp2.random = map.get(temp.random);
+            temp = temp.next;
         }
-
-        /*
-            Removing the initial nodes from the Linked List .
-        */
-
-        head = head.next ;
-        curr = head ;
-
-        while( curr.next != null )
-        {
-          curr.next = curr.next.next ;
-          curr = curr.next ;
-        }
-
-        return head ;
+        return sol.next;
     }
 }
