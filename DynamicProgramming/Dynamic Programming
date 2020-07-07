@@ -1,0 +1,35 @@
+Dynamic Programming : 
+
+1. When to use Dynamic Programming ?
+   - Decision based problem and the answer required is Optimal .
+
+2. What is Dynamic Programming ? 
+   - Recursion + Memoization 
+
+3. How to write recursion ?
+ 	- Base Condition 
+ 	- Choice 
+
+4. How to find base condition for recursion ? 
+	- Think about the smallest input and then find , what
+	  will be the answer of that smallest input .
+
+5. How to write Recursive Equation ?
+    - Learn to draw decision tree 
+
+6. How to get Dynamic Solution of a problem ? 
+	- Convert recursive solution to dynamic solution .
+
+7. Why do you convert Recursive solution to Dynamic Approach ?
+   -  Because Recursive approach are time consuming and may 
+      also lead to stack overflow , So we convert recursive
+      Solution to Dynamic Approach . 
+
+8. How to convert Recursive Solution to Dynamic Approach ?
+   - The base case of recursive solution becomes the initialization
+     condition for the DP matrix , and then choice condition of 
+     recursion is used to fill elements of DP matrix .
+
+9. Tips for solving DP Problem .
+	- While writing Recursion always write by considering
+	  array index n as arr.length and not starting from 0 .
