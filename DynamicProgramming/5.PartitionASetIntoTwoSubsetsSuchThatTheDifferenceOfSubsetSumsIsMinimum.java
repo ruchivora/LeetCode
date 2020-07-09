@@ -1,11 +1,11 @@
 /*
-		Solution : We need S2 - S1 = Minimum Difference .
-							 Where S2 = Sum of some of the elements of the array .
-							 and   S1 = Sum of remaining elements of the array .
+		Solution  : We need S2 - S1 = Minimum Difference .
+							  Where S2 = Sum of some of the elements of the array .
+							  and   S1 = Sum of remaining elements of the array .
 
-							 If we have S1 then S2 = Sum of all elements - S1 . 
-							 Substituting we get , Sum of all elements - S1 - S1 .
-							 Sum of all elements - 2 * S1 , Which should be minimum .
+							  If we have S1 then S2 = Sum of all elements - S1 . 
+							  Substituting we get , [ Sum of all elements - S1 ] - S1 .
+							  Sum of all elements - 2 * S1 , Which should be minimum .
 		
 		Question  : https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/
 
@@ -13,9 +13,8 @@
 */
 import java.util.*; 
 
-class GFG { 
-	
-	
+class GFG 
+{ 
 	public static boolean[] subsetSum( int arr[] , int n , int rangeSum ) 
 	{ 
 			boolean t[][] = new boolean[ n + 1 ][ rangeSum + 1 ] ;
@@ -51,9 +50,9 @@ class GFG {
 
 	public static int findMinDifference( int arr[] , int n )
 	{
-		 int range = 0 ;
+		  int range = 0 ;
 
-		 for( int i = 0 ; i < n ; i++ )
+		  for( int i = 0 ; i < n ; i++ )
 		 				range += arr[i] ;
 
 		 	boolean result[] = subsetSum( arr , n , range / 2 ) ; 

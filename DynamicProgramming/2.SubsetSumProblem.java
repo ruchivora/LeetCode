@@ -43,6 +43,7 @@ class GFG {
           {
             if( i == 0 && j == 0)
               		t[i][j] = true ;
+                
             else if( i == 0 )
               	t[i][j] = false ;
             
