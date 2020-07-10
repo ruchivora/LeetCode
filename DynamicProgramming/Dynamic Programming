@@ -15,7 +15,9 @@ Dynamic Programming :
 	  will be the answer of that smallest input .
 
 5. How to write Recursive Equation ?
-    - Learn to draw decision tree 
+    - Learn to draw decision tree .
+    - While writing recursive solution alays think about 
+      what are the decisions to be made .
 
 6. How to get Dynamic Solution of a problem ? 
 	- Convert recursive solution to dynamic solution .
@@ -33,3 +35,12 @@ Dynamic Programming :
 9. Tips for solving DP Problem .
 	- While writing Recursion always write by considering
 	  array index n as arr.length and not starting from 0 .
+
+10. What are the various patterns of Dynamic Programming ?
+      1. 0/1 Knapsack 
+      2. Unbounded Knapsack 
+      3. Longest common Subsequence 
+
+11. How to find which pattern does the given problem belong to ?
+      1. Match the input 
+      2. Match the output 
