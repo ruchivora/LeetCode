@@ -5,8 +5,6 @@
 
 */
 
-
-
 public class Solution 
 {
     /* Forming Hash map instead of 3-D array .*/
@@ -101,7 +99,6 @@ public class Solution
                     ans = ans + LF * RF + LT * RT ;
             }
         }
-           
         map.put( str1 , ans ) ;     
         return ans % 1003 ;
     }
