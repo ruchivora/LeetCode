@@ -3,9 +3,8 @@
 		then first write the understandable simple code .
 
 		Then try to optimize the code .
+		The optimal code has a very good Logic .
 */
-
-
 
 class Solution {
     public int maxDistToClosest(int[] seats) 
