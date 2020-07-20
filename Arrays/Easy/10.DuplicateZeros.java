@@ -1,3 +1,10 @@
+
+/* 
+    Time Complexity : O(N) SpaceComplexity: O(N) .
+    How to improve space ?
+    This problem can also be solved by using constant space .
+*/
+
 class Solution {
     public void duplicateZeros(int[] arr) 
     {
@@ -28,3 +35,6 @@ class Solution {
         }
     }
 }
+
+
+

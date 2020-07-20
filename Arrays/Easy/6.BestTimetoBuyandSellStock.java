@@ -7,7 +7,7 @@ class Solution {
 	    	for( int i = 0 ;  i < prices.length ; i++ )
 	    	{
 	    			if( min > prices[i] )
-	    					min = ( min < prices[i] ) ? min : prices[i] ;
+	    					min = prices[i] ;
 	    			else
 	    				max = ( max > prices[i] - min ) ? max : prices[i] - min  ;
 	    	}
