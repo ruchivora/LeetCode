@@ -19,7 +19,7 @@ class Solution {
         		if( i >= k - 1 )
         		{
         			max = ( max > (double)sum / k ) ? max : (double)sum / k ;
-        		  sum = sum - nums[ i - k + 1 ] ;
+        		    sum = sum - nums[ i - k + 1 ] ;
         		}
         }
       return max ; 
