@@ -1,4 +1,4 @@
-/*
+     /*
 		Solution  : We need S2 - S1 = Minimum Difference .
 							  Where S2 = Sum of some of the elements of the array .
 							  and   S1 = Sum of remaining elements of the array .

@@ -4,11 +4,13 @@
 
 		How to convert longest common Subsequence to Longest Common Substring ?
 			- In substring if the character of the strings don't match then 
-			  start the counter form 0 .
+			  start the counter from 0 .
 
 		How to solve ?
 		 - Write recursive Solution .
 		 - Convert to Dynamic Programming . 
+
+		Related Question : Maximum Length of Repeated Subarray .
 */
 
 /* Recursive Solution */
@@ -39,9 +41,9 @@ class GFG {
 						if( i == 0 || j == 0 )
 								t[i][j] = 0 ;
 
-						else if( X[ m - 1 ] == Y[ n - 1 ] )
+						else if( X[ i - 1 ] == Y[ j - 1 ] )
 								  {
-										t[i][j] =  1 + t[ m - 1 ][ n - 1 ] ;
+										t[i][j] =  1 + t[ i - 1 ][ j - 1 ] ;
 										max     = ( max > t[i][j] ) ? max : t[i][j] ;
 									}		
 									else t[i][j] =  0  ;
