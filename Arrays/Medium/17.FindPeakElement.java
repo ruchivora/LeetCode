@@ -1,5 +1,6 @@
 /*
     The Question introduces the concept of Binary Search on Answer .
+    
     Reference : https://www.youtube.com/watch?v=OINnBJTRrMU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=17
 
 */
@@ -17,7 +18,6 @@ class Solution {
       {
           mid = left + ( right - left ) / 2 ;
 
-
           if( mid > 0 && mid < nums.length - 1 )
           {
               if( nums[ mid - 1 ] < nums[mid] && nums[mid + 1 ] < nums[mid] )
@@ -31,14 +31,14 @@ class Solution {
           else if( mid == 0 )
           {
             if( nums[mid] > nums[mid + 1] ) return mid ;
-            else return mid+1 ; 
+            else return mid + 1 ; 
           }
           else if( mid == nums.length - 1 )
           {
             if( nums[mid-1] > nums[mid] ) return mid-1;
             else return mid ;
           }
-      } 
+      }
     return 0 ;
         
     }
