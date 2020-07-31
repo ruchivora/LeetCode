@@ -1,0 +1,18 @@
+Various Algorithms for solving Questions of Array .
+
+1. Majority Element : Moore Voting Algorithm .
+		- Majority Element
+		- N/3 Repeat Number 
+
+2. Sliding Window : Can be used for finding sum and product .
+   But sliding window can not be used if the array element
+   is negative .
+        - Subarray Product Less than k 
+        - Subarray sum ( Only positive numbers ) 
+
+3. Two pointer approach . 
+
+4. Decision Tree . Write recurrance and convert it to DP .
+
+5. Cumulative Sum approach . 
+		- Subarray sum equals K
