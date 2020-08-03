@@ -21,7 +21,7 @@ class Solution
 	    		if( i == 0 || i == 1 )
 	    				t[i] = cost[i] ;
 
-	    		else t[i] = cost[i] + Math.min( t[ i - 1] , t[ i - 2 ] ) ;
+	    		else t[i] = cost[i] + Math.min( t[ i - 1 ] , t[ i - 2 ] ) ;
 	    	} 
     	return Math.min( t[n - 1] , t[ n - 2 ] ) ;
     }
