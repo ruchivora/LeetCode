@@ -1,3 +1,10 @@
+/*
+    Reference : https://www.youtube.com/watch?v=TzIuVm1npgw
+    This problem is slight variation of two sum problem .
+    But beautiful concept .
+
+*/
+
 class Solution 
 {
     public int numPairsDivisibleBy60(int[] time) 
