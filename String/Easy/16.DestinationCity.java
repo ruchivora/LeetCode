@@ -1,3 +1,21 @@
+/*
+    Read the Question carefully ! .
+
+    Return the destination city, that is, the 
+    city without any " path outgoing to another city. "
+    It is guaranteed that the graph of paths forms a line 
+    without any loop, therefore, there will be exactly one 
+    destination city.
+
+    So , the destination is the one where their is no 
+    outgoing edge . 
+
+    Logic : First store all the destination state and 
+            then remove all the states which are reachable
+            from the source . because the Question clearly 
+            says that destination has no outgoing edge .  
+*/
+
 class Solution 
 {
   public String destCity(List<List<String>> paths) 

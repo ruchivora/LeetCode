@@ -1,0 +1,6 @@
+Methods to solve problems in Strings . 
+
+1 . If the String has multiple occurance of a character
+    and if some sort of comaprison is involved , then
+    Grouping the character is one of the way to solve
+    the problem .

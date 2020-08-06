@@ -12,6 +12,8 @@
 
 		Reference : https://www.youtube.com/watch?v=bClIZj66dVE&t=230s
 
+		The Question Greatest Common Divisor of Strings also has similar Logic !.
+
 */
 
 class Solution {
