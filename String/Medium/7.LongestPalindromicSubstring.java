@@ -1,6 +1,15 @@
+/*
+		Reference: https://www.youtube.com/watch?v=UflHuQj6MVA&t=457s
+
+		Reference : https://www.youtube.com/watch?v=y2BD4MJqV20
+
+*/
+
+
+
 class Solution 
 {
-  public String longestPalindrome(String s) 
+  public String longestPalindrome( String s ) 
   {
   	if( s.length() == 1 ) return s ; 
 
@@ -24,16 +33,16 @@ class Solution
 
   public boolean isPalindrome( String s , int left , int right )
   {
-  		/* 
-  				here left >= right means that even if there 
-  				is single character then return true .
-  		*/
-	  	if( left >= right )
-	  			return true ;
+		/* 
+				here left >= right means that even if there 
+				is single character then return true .
+		*/
+  	if( left >= right )
+  			return true ;
 
-	  	if( s.charAt(left) != s.charAt( right) )
-	  			return false ;
+  	if( s.charAt(left) != s.charAt( right) )
+  			return false ;
 
-	  	return isPalindrome( s , left + 1 , right - 1 ) ;
+  	return isPalindrome( s , left + 1 , right - 1 ) ;
 	}
 }
