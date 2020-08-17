@@ -1,59 +1,43 @@
+/*
+		Logic : All the elements with same sum for ( i + j ) will
+						form one group .
+
+		Reference : https://www.youtube.com/watch?v=6t82AO15Pgk&t=253s
+*/
+
 class Solution {
-	public int[] findDiagonalOrder(List<List<Integer>> nums) 
-	{
-			List<Integer> result = new ArrayList<Integer>() ;
+  public int[] findDiagonalOrder( List<List<Integer>> nums ) 
+  {
+      HashMap<Integer,List<Integer>> map = new HashMap<Integer,List<Integer>>() ;
+      /* We find this in order to avoid use of comaparator */
+      int maxIndex = Integer.MIN_VALUE ;
+      int count    = 0 ;
 
-			if( nums.size() == 1 ) 
-			{
-					for( int i = 0 ; i < nums.get(0).size() ; i++ )
-								result.add( nums.get(0).get(i) ) ;
+      for( int i = 0 ; i < nums.size() ; i++ )
+      {
+      	for( int j = 0 ; j < nums.get(i).size() ; j++ )
+      	{
+      		count++ ;
+      		maxIndex = ( maxIndex < i + j ) ? ( i + j ) : maxIndex ; 
 
-				return answer( result ) ;
-			}
+      			if( !map.containsKey( i + j ) )
+      					map.put( i + j , new ArrayList<Integer>() ) ;
+      			
+      			map.get( i + j ).add( 0 , nums.get(i).get(j) ) ;
+      	}
+      }
 
-			for( int i = 0 ; i < nums.size() ; i++ )
-			{
-					int index = 0 ;
+      int ans[] = new int [ count ] ; 
+      int index = 0 ;
 
-					for( int j = i ; j >= 0 ; j-- )
-					{
-								if( nums.get(j).size() - 1 >= index )
-								{
-									int temp = nums.get(j).get(index++) ;
-									result.add( temp ) ;
-								}
-								else index++ ;			
-					}
-			}
-
-			/* Elements after rows */
-
-			for( int i = 1 ; i < nums.get( nums.size() - 1 ).size() ; i++ )
-			{
-					int index = i ; 
-
-					for( int j = nums.size() - 1 ; j >= i  ; j-- )
-					{
-							System.out.println( nums.get(j).get(index) ) ;
-
-							if( nums.get(j).size() - 1 >= index )
-							{
-								int temp = nums.get(j).get( index++ ) ;
-								result.add( temp ) ;
-							}	
-							else index++ ;
-					}
-			}
-		return answer( result ) ;
-	}
-
-	public int[] answer( List<Integer> result )
-	{
-			int ans [] = new int[ result.size() ] ;
-			for( int i = 0 ; i < result.size() ; i++ )
-							ans[i] = result.get(i) ;
-		return ans ;
-	}
-
-
+      for( int i = 0 ; i <= maxIndex ; i++ )
+      {
+      		if( map.containsKey( i ) )
+      		{
+      			for( int j = 0 ; j < map.get(i).size() ; j++ )
+      							ans[index++] = map.get(i).get(j) ;
+      		}
+      }
+    return ans ;
+  }
 }

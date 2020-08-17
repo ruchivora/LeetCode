@@ -1,30 +1,44 @@
-class Solution {
-    public TreeNode buildTree(int[] preorder, int[] inorder) {
-        
-    	return helper( 0 , 0 , inorder.length - 1 , preorder , inorder ) ;
+/*
+		You know the Logic . 
+		Main challenge is to adjust the 8 Pointers . 
 
+		Reference : https://www.youtube.com/watch?v=0r_cx1c8Z1A
+
+*/
+
+
+class Solution 
+{
+    public TreeNode buildTree(int[] preorder, int[] inorder) 
+    { 
+        int len = preorder.len ; 
+    	return helper( preorder, inorder , 0 , len - 1 , 0 , len - 1 ) ;
     }
-    /* preStart is the index of preorder array . */
-    public TreeNode helper( int preStart , int inStart , int inEnd , int[] preorder , int[] inorder )
+    
+    public TreeNode helper( int[] preorder , int[] inorder , int preStart , int preEnd , int inStart , int inEnd )
     {
-    		/* Base case for recurrence : When the array is null */
 	    	if( inStart > inEnd ) return null ;
 
 	    	TreeNode root = new TreeNode( preorder[preStart] ) ;
 
-	    	int inIndex = 0 ;
+	    	int rootIndex = 0 ;
 
 	    	for( int i = inStart ; i <= inEnd ; i++ )
 	    	{
-	    		if( inorder[i] == root.val )
-	    					inIndex = i ; 
+		    		if( inorder[i] == root.val )
+		    		{
+		    				rootIndex = i ; 
+		    				break ;
+		    		}			
 	    	}
 
-	    	root.left  = helper( preStart + 1 , inStart , inIndex - 1 , preorder , inorder ) ;
-	    	root.right = helper( preStart + inIndex - inStart + 1 , inIndex + 1 , inEnd , preorder , inorder ) ;
-	    	/* preStart + inIndex - inStart + 1 This bypasses elements of leftSubtree */
+	    	int leftTreeSize  = rootIndex - inStart ; 
+	    	int rightTreeSize = inEnd - rootIndex ;
 
-	  return root ;
+	    	root.left  = helper( preorder , inorder , preStart + 1 , preStart + leftTreeSize , inStart , rootIndex - 1 ) ;
+	    	root.right = helper( preorder , inorder , preEnd - rightTreeSize + 1 , preEnd  , rootIndex + 1 , inEnd ) ;
+	    
+	 	 return root ;
 
     }
 }

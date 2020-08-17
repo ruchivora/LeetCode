@@ -1,25 +1,43 @@
+/*
+    Logic : I knew the logic . But how to implement ? 
+
+    Reference : https://www.youtube.com/watch?v=0r_cx1c8Z1A
+
+    Here the main task is to set the 8 Pointers .
+
+*/
+
+
 class Solution {
     public TreeNode buildTree(int[] inorder, int[] postorder) 
     {
-    		return constructTree( postorder.length - 1 , 0 , inorder.length - 1 , inorder , postorder ) ;    
+      int len = inorder.length ;
+    		return constructTree( inorder , postorder , 0 , len - 1 , 0 , len - 1 ) ;    
     }
 
-    public TreeNode constructTree( int postStart , int inStart , int inEnd , int[] inorder , int[] postorder ) 
+    public TreeNode constructTree( int[] inorder , int[] postorder , int inStart , int inEnd , int postStart , int postEnd ) 
     {
     		if( inStart > inEnd ) return null ;
 
-    		TreeNode root = new TreeNode( postorder[postStart] ) ;
+    		TreeNode root = new TreeNode( postorder[postEnd] ) ;
 
-    		int inIndex = 0 ;
+    		int rootIndex = 0 ;
 
     		for( int i = inStart ; i <= inEnd ; i++ )
     		{
-    			 if( inorder[i] == postorder[postStart] )
-    			 			inIndex = i ;
+    			 if( inorder[i] == postorder[postEnd] )
+           {
+              rootIndex = i ; 
+              break ;
+           } 			
     		} 
+
+        int leftTreeSize  = rootIndex - inStart ;
+        int rightTreeSize = inEnd - rootIndex ; 
     		/* The equation postStart+ inIndex - inEnd -1 . This will bypass right subtree elements */
-    		root.left  = constructTree( postStart + inIndex - inEnd - 1 , inStart , inIndex - 1 , inorder , postorder ) ;
-    		root.right = constructTree( postStart - 1 , inIndex + 1 , inEnd , inorder , postorder ) ;
+        /* Here we are also dividing postorder  array  */
+    		root.left  = constructTree( inorder , postorder , inStart , rootIndex - 1 , postStart , postStart + leftTreeSize - 1 ) ;
+    		root.right = constructTree( inorder , postorder , rootIndex + 1 , inEnd , postEnd - rightTreeSize , postEnd - 1 ) ;
 
     		return root ;
     }    
