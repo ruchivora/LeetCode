@@ -2,6 +2,7 @@
 	Be careful while using .clear() to clear a collection .
 */
 
+
 class Solution {
     public List<List<Integer>> generate(int numRows) 
     {
@@ -32,3 +33,4 @@ class Solution {
      return result ;
     }
 }
+
