@@ -19,16 +19,16 @@ class Solution {
      {
       	LinkedList<Integer> temp = new LinkedList<Integer>() ;
      	
-     	for( int j = 0 ; j <= i ; j++ )
-     	{
-     		if( j == 0 || j == i )	temp.add(1) ;
-     		else
-     		{
-     			int sum = result.get(i-1).get(j-1) + result.get(i-1).get(j) ;
-     			temp.add(sum) ;
-     		}
-     	}
-     	result.add(temp) ;
+         	for( int j = 0 ; j <= i ; j++ )
+         	{
+         		if( j == 0 || j == i )	temp.add(1) ;
+         		else
+         		{
+         			int sum = result.get(i-1).get(j-1) + result.get(i-1).get(j) ;
+         			temp.add(sum) ;
+         		}
+         	}
+     	  result.add(temp) ;
      }
      return result ;
     }
