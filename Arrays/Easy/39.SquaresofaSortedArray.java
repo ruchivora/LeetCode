@@ -19,19 +19,20 @@ class Solution
 
         while( i <= j )
         {
-        		if( Math.abs( A[i] ) >= Math.abs( A[j] ) )
-        		{
-        			B[k] = A[i] ;
-        			i++ ;
-        			k-- ;
-        		}
-        		else if( Math.abs( A[i] ) < Math.abs( A[j] ) )
-        					{
-        						B[k] = A[j] ;
-        						j-- ; 
-        						k-- ;
-        					}
+      		if( Math.abs( A[i] ) >= Math.abs( A[j] ) )
+      		{
+      			B[k] = A[i] ;
+      			i++ ;
+      			k-- ;
+      		}
+      		else if( Math.abs( A[i] ) < Math.abs( A[j] ) )
+      					{
+      						B[k] = A[j] ;
+      						j-- ; 
+      						k-- ;
+      					}
         }
+        
         for( int l = 0 ; l < B.length ; l++ )
         			B[l] = B[l] * B[l] ;
 
