@@ -47,7 +47,11 @@ class Solution
  		}
 }
 
-/* My Code looking at decision Tree */
+/*
+   My Code looking at decision Tree 
+   Drawback : this will explore some branches that are not even required! .
+   https://www.youtube.com/watch?v=MTI2wc8s0BY&ab_channel=TimeComplexityInfinity
+*/
 
 class Solution 
 {
@@ -73,14 +77,15 @@ class Solution
 	  	return ;
 	  }
 
-  	if( index < candidates.length )
-  	{	
+    if( index >= candidates.length )
+          return  ;
+
   		int val = candidates[index] ;
   		list.add( val ) ;
   		combination( result , list , candidates , target - val , index ) ;
   		list.remove( list.size() - 1 ) ;
   		combination( result , list , candidates , target , index + 1 ) ; 
-  	}
+  	
   }
 
 

@@ -22,7 +22,7 @@ class Solution {
       }
 
     left  = 0 ;
-      right = nums.length - 1 ;
+    right = nums.length - 1 ;
 
       while( left <= right )
       {

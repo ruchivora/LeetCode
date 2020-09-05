@@ -50,3 +50,46 @@ class Solution
     }
 }
 
+
+/* 
+  This recurrence code works fine but the duplicates are not eleminated !
+*/
+
+
+class Solution
+{
+    List<List<Integer>> result = new ArrayList<List<Integer>>() ;
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) 
+    {
+        if( candidates.length == 0 )
+              return result ;
+
+        ArrayList<Integer> list = new ArrayList<Integer>() ;
+        Arrays.sort( candidates ) ; 
+
+        combination( candidates , list , target , 0 ) ;
+      return result ;
+    }
+
+    public void combination( int[] candidates , ArrayList<Integer> list , int target , int index )
+    {
+        if( target == 0 )
+        {
+            result.add( new ArrayList<>(list) ) ;
+          return ;
+        }
+
+        if( index >= candidates.length )
+              return ;
+
+        if( candidates[index] <= target )
+        {
+          list.add( candidates[index] ) ;
+          combination( candidates , list , target - candidates[index] , index + 1 ) ;
+          list.remove( list.size() - 1 ) ;
+          combination( candidates , list , target , index + 1 ) ;
+        }
+    }
+
+}
