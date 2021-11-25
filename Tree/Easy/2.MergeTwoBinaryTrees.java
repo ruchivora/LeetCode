@@ -15,6 +15,8 @@
  */
 
 /*
+	Reference : https://www.youtube.com/watch?v=_LJO5nBKC1A&ab_channel=NickWhite
+	
 	Here the main Hint is , if t1.left is not present then you 
 	need not create a new node and then insert the value etc .
 	Instead just stores the address of t2.left node in t1.left . 
