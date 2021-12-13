@@ -1,8 +1,7 @@
 /*
-		Iterative PreOrderTraversal : https://www.youtube.com/watch?v=VQTF_pRTZek&t=6s
+		Iterative PreOrderTraversal : https://www.youtube.com/watch?v=Bfqd8BsPVuw&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=10&ab_channel=takeUforward
 
 */
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -18,29 +17,31 @@
  *     }
  * }
  */
-class Solution 
-{
-	List<Integer> result  = new ArrayList<Integer>() ;
-	Stack<TreeNode> stack = new Stack<TreeNode>() ;
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        
+        List<Integer> preOrder = new ArrayList<Integer>() ;
+        Stack<TreeNode> stack  = new Stack<TreeNode>() ;
+        
+        if( root ==null )
+            return preOrder ;
+        
+        stack.push( root ) ;
+        
+        while( !stack.isEmpty() )
+        {
+            TreeNode currEle = stack.pop() ;
 
-    public List<Integer> preorderTraversal(TreeNode root) 
-    {
-    		TreeNode p = root ; 
-    		while( true )
-    		{
-	    				while( p != null )
-	    				{
-	    					result.add(p.val) ;
-	    					stack.push(p) ;
-	    					p = p.left  ;
-	    				}
-
-	    				if( stack.isEmpty() ) break ;
-
-	    				p = stack.pop() ;
-	    				p = p.right ;
-    				}
-    		
-    	return result ;
+            if( currEle.right != null )
+                    stack.push( currEle.right ) ;
+            
+            if( currEle.left != null )
+                    stack.push( currEle.left ) ;
+            
+            
+            preOrder.add( currEle.val ) ;
+            
+        }
+        return preOrder ;  
     }
 }
